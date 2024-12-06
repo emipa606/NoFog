@@ -1,5 +1,8 @@
 # Changelog for NoFog
 
+1.5.1 - Fixed an incompatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2831698056]Stargates![/url]
+
+
 1.5.0 - Mod updated for 1.5 and passed autotests
 
 
