@@ -1,5 +1,8 @@
 # Changelog for NoFog
 
+1.5.2 - Should now work with any pocket map, such as used in Ancient Urban Ruins
+
+
 1.5.1 - Fixed an incompatibility with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2831698056]Stargates![/url]
 
 
