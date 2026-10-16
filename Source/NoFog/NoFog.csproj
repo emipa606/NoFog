@@ -1,23 +1,65 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputPath>..\..\1.6\Assemblies</OutputPath>
-    <TargetFramework>net48</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputPath>..\..\1.7\Assemblies</OutputPath>
+    <TargetFramework>net10.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
     <DebugType>None</DebugType>
     <LangVersion>latest</LangVersion>
-    <FileVersion>1.6.0</FileVersion>
+    <FileVersion>1.7.0</FileVersion>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <AssemblyVersion>1.7</AssemblyVersion>
+    <Product>No Fog</Product>
+    <Copyright>© Mlie 2026 - MIT License</Copyright>
+    <Nullable>warnings</Nullable>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref">
-      <Version>1.6.4503-beta</Version>
-      <ExcludeAssets>runtime</ExcludeAssets>
-      <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\common\RimWorld\Assembly-CSharp.dll</HintPath>
+      <CopyLocal>false</CopyLocal>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>..\..\..\..\..\..\common\RimWorld\UnityStubs.dll</HintPath>
+      <CopyLocal>false</CopyLocal>
+      <Private>false</Private>
+    </Reference>
     <PackageReference Include="Lib.Harmony">
-      <Version>*</Version>
+      <Version>3.0.0-rc.3</Version>
       <ExcludeAssets>runtime</ExcludeAssets>
     </PackageReference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\common\RimWorld\Assembly-CSharp.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>..\..\..\..\..\..\SteamLibrary\steamapps\common\RimWorld\UnityStubs.dll</HintPath>
+      <CopyLocal>False</CopyLocal>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\common\RimWorld\Assembly-CSharp.dll</HintPath>
+      <CopyLocal>false</CopyLocal>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>..\..\..\..\..\..\common\RimWorld\UnityStubs.dll</HintPath>
+      <CopyLocal>false</CopyLocal>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\..\..\common\RimWorld\Assembly-CSharp.dll</HintPath>
+      <CopyLocal>false</CopyLocal>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityStubs">
+      <HintPath>..\..\..\..\..\..\common\RimWorld\UnityStubs.dll</HintPath>
+      <CopyLocal>false</CopyLocal>
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
+  <Target Name="KillRimWorld" BeforeTargets="Clean;Build">
+    <Exec Command="tasklist /FI &quot;IMAGENAME eq RimWorld.exe&quot; | find /I &quot;RimWorld.exe&quot; &lt;;nul &amp;&amp; taskkill /F /IM RimWorld.exe" IgnoreExitCode="true" />
+  </Target>
 </Project>
